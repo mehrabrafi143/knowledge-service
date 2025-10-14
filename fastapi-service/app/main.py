@@ -39,7 +39,6 @@ async def health():
 async def search(query: str, limit: Optional[int] = 10, service: SearchService = Depends(get_search_service)):
     if not query.strip():
         raise HTTPException(status_code=400, detail="Query parameter cannot be empty")
-
     try:
         results = await service.search_entries(query, limit)
         return SearchResponse(query=query, results=results, total_count=len(results))

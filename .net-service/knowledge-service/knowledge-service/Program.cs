@@ -19,6 +19,10 @@ builder.Host.UseSerilog((context, configuration) =>
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// PostgreSQL Configuration (uncomment to use PostgreSQL instead of SQL Server)
+//builder.Services.AddDbContext<ApplicationDbContext>(options =>
+//    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 // Application Services
 builder.Services.AddScoped<IKnowledgeService, KnowledgeService>();
 

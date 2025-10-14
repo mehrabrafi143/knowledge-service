@@ -149,17 +149,19 @@ py -m pytest test/ -v
 ```
 Sample output:
 ```
-=========================== test session starts ============================
-collected 9 items
 
-test/test_main.py::test_health_check PASSED
-test/test_main.py::test_search_endpoint PASSED
-test/test_services.py::test_search_service_matches_query FAILED
-test/test_services.py::test_search_service_no_match PASSED
-...
-================== 2 failed, 7 passed, 3 warnings in 0.27s ==================
-```
-Two tests may fail due to Pydantic field naming differences (`createdAt` vs. `created_at`), which can be easily fixed in `models.py` if desired.
+
+test/test_main.py::test_root PASSED                                      [ 11%]
+test/test_main.py::test_health PASSED                                    [ 22%]
+test/test_main.py::test_search_validation PASSED                         [ 33%]
+test/test_main.py::test_search_endpoint_integration PASSED               [ 44%]
+test/test_services.py::TestSearchService::test_search_entries_success PASSED [ 55%]
+test/test_services.py::TestSearchService::test_search_entries_no_results PASSED [ 66%]
+test/test_services.py::TestSearchService::test_search_entries_network_error PASSED [ 77%]
+test/test_services.py::TestSearchService::test_search_entries_http_error PASSED [ 88%]
+test/test_services.py::TestSearchService::test_relevance_scoring_logic PASSED [100%]
+
+============================== 9 passed in 1.67s ============================
 
 ---
 
