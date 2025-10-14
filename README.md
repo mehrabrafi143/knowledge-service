@@ -156,7 +156,6 @@ test/test_services.py::TestSearchService::test_relevance_scoring_logic PASSED [1
 
 ============================== 9 passed in 1.67s ============================
 
----
 
 ## Tech Stack
 
