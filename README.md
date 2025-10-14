@@ -110,19 +110,12 @@ If all tests pass, you’ll see the result in the Test Explorer panel.
 
 ## FastAPI Setup
 
-### 1. Create and Activate Virtual Environment
-```bash
-cd D:\knowledge-service\fastapi-service
-python -m venv venv
-source venv/Scripts/activate  # for Git Bash
-```
-
-### 2. Install Dependencies
+### 1. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Run FastAPI App
+### 2. Run FastAPI App
 ```bash
 py -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
